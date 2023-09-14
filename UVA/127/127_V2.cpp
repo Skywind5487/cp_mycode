@@ -5,7 +5,7 @@
 // Time Limit: 3000 ms
 // 
 // Powered by CP Editor (https://cpeditor.org)
-
+//http://domen111.github.io/UVa-Easy-Viewer/?127
 #include <bits/stdc++.h>
 using namespace std;
 struct card{
