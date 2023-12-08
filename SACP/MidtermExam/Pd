@@ -1,0 +1,16 @@
+//https://hackmd.io/@sa072686/Hy-AMVXET/%2F%40sa072686%2FKattis_juryjeopardy
+
+
+
+
+/*
+模擬
+
+
+
+hard:確認上下左右邊界
+key:平移起始點(head)、維護最上、下、左、右，再根據左上角的偏移量平移
+
+
+
+*/
