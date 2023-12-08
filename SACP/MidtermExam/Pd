@@ -25,3 +25,29 @@ key:平移起始點(head)、維護最上、下、左、右，再根據左上角�
 
 
 */
+/*
+ip:n move list
+op: n  h w orgin
+
+
+prep: list-dir op[]
+do:
+	fill op[] #
+	take mid 
+	run 
+	update x0 x1 y0 y1
+	cout from x0 x1 y0-1 y1
+
+*/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int dx[3]={1,0,-1,0};
+int dy[3]={0,1,0,-1};
+//(y,x)=(h,w)
+int main(){
+	
+	
+	
+}
