@@ -1,1 +1,60 @@
-//https://hackmd.io/@sa072686/Hy-AMVXET/%2F%40sa072686%2FCSES_2165
+/*
+Pb:https://hackmd.io/@sa072686/Hy-AMVXET/%2F%40sa072686%2FCSES_2165
+要求:
+1. 總和步數
+2. 搬動過程
+
+搬動過程:紀錄步數+建表 最後再輸出 or邊遞迴邊輸出
+
+fuc:
+
+	ip:n from to
+	op:void
+	stop:n=0
+	do:
+		move n-1 to tmp
+		move 1 to tar
+		move n-1 from tmp to tar
+*/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int step;
+
+void fuc(int n,int f ,int t){
+	if(n==0){
+		return;
+	}
+	int tmp;
+	tmp=6-f-t;
+	fuc(n-1,f,tmp);
+	cout<<f<<" "<<t<<"\n";
+	//step++;
+	fuc(n-1,tmp,t);
+}
+
+
+
+
+
+int main(){
+	int n,i;
+	
+	cin>>n;
+	/*
+	step=1;
+	step<<=n;
+	step--;
+	*///or
+	step=0;
+	for(i=0;i<n;i++){
+		step=2*step+1;
+	}
+	cout<<step<<'\n';
+	fuc(n,1,3);
+	
+	
+	
+}
