@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+int arr[60000];
+void msort(int l,int r){
+	if(l==r){return;}
+	int mid=(l+r)/2;
+	msort(l,mid);
+	msort(mid+1,r);
+	merge(p,q);
+}
+void merge(int l,int r){
+	int mid=(l+r)/2;
+	int pl=l,pr=mid+1;
+	int k=l;
+	vector<int> temp;
+	for(;k<=q;k++){
+		if(pl>(mid)){
+			temp.push_back(arr[pr]);
+			pr++;
+		}
+		else if(pr>r){
+			temp.push_back(arr[pl]);
+			pl++;
+		}
+		else if(arr[pl]>arr[pr]){
+			temp.push_back(arr[pl]);
+			pl++;
+		}
+		else {
+			temp.push_back(arr[pr]);
+			pr++;
+		}
+	}
+	for
+}
+
+
+int main(){
+	
+}
