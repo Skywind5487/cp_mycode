@@ -1,0 +1,94 @@
+#include<bits/stdc++.h>
+using namespace std;
+using ll= long long int;
+const ll LEN=1e6;
+ll arr[LEN];
+//vector<ll> v;
+int main(){
+	ll n,i;
+	cin>>n;
+	for(i=0;i<n;i++){
+		cin>>arr[i];
+	}
+	ll k;
+	cin>>k;
+	int l,r,mid,il,ir,ansl,ansr,ans;
+	ansl=-1;
+	ansr=-1;
+	sort(arr,arr+n);
+	for(i=0;i<k;i++){
+		cin>>il>>ir;
+		
+		//cout<<r;
+		l=0;
+		r=n-1;
+		if(il>arr[n-1]){
+			cout<<0<<"\n";
+		}
+		else if(ir<arr[0]){
+			cout<<0<<"\n";
+			
+		}
+		else{
+			l=0;
+			r=n-1;
+			//cout<<n<<"ooo\n";
+			while(l<=r){
+				//cout<<" "<<l<<" "<<r<<":mid\n";
+				
+				
+				mid=(r+l)>>1;
+				
+				//cout<<mid<<" "<<l<<" "<<r<<":mid\n";
+				
+				if(arr[mid]==il){
+					r=mid-1;
+					if(arr[r]!=arr[mid]){
+						break;
+					}
+				}
+				else if(arr[mid]>il){
+					r=mid-1;
+					//cout<<r<<" :r\n";	
+				}
+				else{
+					l=mid+1;
+					//cout<<l<<" :l\n";
+				}
+			}
+			ansl=mid;
+			l=0;
+			r=n-1;	
+			while(l<=r){
+				//cout<<" "<<l<<" "<<r<<":mid\n";
+				
+				
+				mid=(r+l)>>1;
+				
+				//cout<<mid<<" "<<l<<" "<<r<<":mid\n";
+				
+				if(arr[mid]==ir){
+					l=mid+1;
+					if(arr[l]!=arr[mid]){
+						break;
+					}
+				}
+				else if(arr[mid]<ir){
+					l=mid+1;	
+				}
+				else{
+					r=mid-1;
+				}
+			}
+			ansr=mid;
+			//cout<<ansl<<" "<<ansr<<" eeee\n";
+			
+			ans=ansr-ansl+1;
+			//cout<<ans<<":ans\n";
+			cout<<ans<<"\n";
+			
+		}
+		
+		
+	}
+}
