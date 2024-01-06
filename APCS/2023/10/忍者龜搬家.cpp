@@ -32,7 +32,7 @@ bool up(char ch) {
 
 
 
-const int LEN=800;
+const int LEN=1024;
 bool used[LEN][LEN];
 node qq[1048576];
 string board[LEN];
