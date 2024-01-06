@@ -34,7 +34,7 @@ bool up(char ch) {
 
 const int LEN=800;
 bool used[LEN][LEN];
-node qq[1e5];
+node qq[1048576];
 string board[LEN];
 
 int bfs(int sx,int sy,int n,int m){
