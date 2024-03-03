@@ -4,7 +4,7 @@ struct Data{
 	int x,y;
 };
 bool compData(const Data &a,const Data &b){
-	return a.x<b.x;
+	return a.x<b.x;//dont use = or other
 }
 
 
