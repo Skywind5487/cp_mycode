@@ -13,6 +13,7 @@ scores = [ [70, 340, 84], [58, 318, 76], [54, 279, 85], [40, 320, 78], [91, 310,
 
 from numpy import argmax
 from scipy import spatial
+from scipy.spatial import distance
 from sklearn.preprocessing import StandardScaler
 # import
 
@@ -23,11 +24,13 @@ target = [50, 300, 86]
 stdsc = StandardScaler()
 normalizeArray = stdsc.fit_transform(scores)
 # normalize
-
-cosineSimilaraty = []
+Similarity=distance.euclidean(target, scores[0])
+index=0
 for i in range(len(scores)):
-  cosineSimilaraty.append(1 - spatial.distance.cosine(target, normalizeArray[i]))
-# cosine similaraty 
+  if(distance.euclidean(target, scores[i])<Similarity):
+    index=i
+# distance.euclidean(a, b)
 
-print("最相近的資料:",scores[argmax(cosineSimilaraty)])
+
+print("最相近的資料:",scores[index])
 # print the similarity
