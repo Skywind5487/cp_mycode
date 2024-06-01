@@ -1,10 +1,10 @@
 //https://apcs.csie.ntnu.edu.tw/wp-content/uploads/2018/12/1050305APCSImplementation.pdf
-
+//https://zerojudge.tw/ShowProblem?problemid=b964
 #include<bits/stdc++.h>
 using namespace std;
 
-const int N = 1e8;
-int tbl[N];
+//const int N = 1e8;
+//int tbl[N];
 
 
 /*
@@ -33,12 +33,22 @@ if n=1
 
 output
 all
-max fail ;best case
+max fail   ;best case
 min succeed;worst cast
 
 
 */
+/*
 
+輸入
+分兩個陣列
+先輸出再輸出
+計算陣列的量後輸出
+
+
+
+
+*/
 
 
 
@@ -48,37 +58,32 @@ bool comp(const int &a ,const int &b){
 }
 
 int main(){
-	
-	int pos=-1;
-	int n; 
-	cin >> n;
-	//cout << n;
-	
-	for(int i = 0 ; i < n ; i++){
-		cin >> tbl[i];
+	int n;
+	cin>>n;
+	vector<int> low,high;
+	int temp;
+	for(int i = 0; i<n ;i++){
+		cin>>temp;
+		if(temp >= 60){
+			high.push_back(temp);
+		}
+		else low.push_back(temp);
 	}
-	
-	sort(tbl,tbl+n,comp);
-	
-	
-	for(int i = 0 ; i < n ; i++){
-		if( tbl[i] >= 60 && pos == -1)pos = i;
-		cout << tbl[i] << " ";
+	sort(high.begin(),high.end(),comp);
+	sort(low.begin() , low.end(),comp);
+	for(int i = 0 ; i < low.size(); i++){
+		cout<< low.at(i) << " ";
 	}
-	
-	cout<<"\n";
-	
-	//max fail ;best case
-	if(pos == 0){
-		cout << "best case\n";
+	for(int i = 0 ; i < high.size(); i++){
+		cout<< high.at(i) << " ";
+	} 
+	cout << "\n";
+	if(low.empty()){
+		cout << "best case" << "\n";
 	}
-	else cout << tbl[max(pos-1,0)] << "\n" ;
-	//min succeed;worst cast
-	
-	if(pos == -1){
-		cout << "worst case\n";
+	else cout << low.back() << "\n";
+	if(high.empty()){
+		cout << "worst case" << "\n";
 	}
-	else cout << tbl[pos] << "\n";
-
-	
+	else cout <<high.front() << "\n";
 }
